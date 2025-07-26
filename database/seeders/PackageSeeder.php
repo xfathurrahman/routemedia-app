@@ -12,25 +12,41 @@ class PackageSeeder extends Seeder
      */
     public function run(): void
     {
-        Package::create([
-            'name' => 'Basic Internet',
-            'price' => 150000.00,
-            'speed' => '10 Mbps',
-        ]);
-        Package::create([
-            'name' => 'Standard Internet',
-            'price' => 250000.00,
-            'speed' => '30 Mbps',
-        ]);
-        Package::create([
-            'name' => 'Premium Internet',
-            'price' => 400000.00,
-            'speed' => '100 Mbps',
-        ]);
-        Package::create([
-            'name' => 'Fiber Optic',
-            'price' => 600000.00,
-            'speed' => '500 Mbps',
-        ]);
+        $packages = [
+            [
+                'name' => 'Paket Rumahan',
+                'price' => 150000.00,
+                'speed' => '10 Mbps',
+            ],
+            [
+                'name' => 'Paket Standar',
+                'price' => 275000.00,
+                'speed' => '30 Mbps',
+            ],
+            [
+                'name' => 'Paket Bisnis',
+                'price' => 450000.00,
+                'speed' => '100 Mbps',
+            ],
+            [
+                'name' => 'Paket Ultra Fiber',
+                'price' => 650000.00,
+                'speed' => '500 Mbps',
+            ],
+            [
+                'name' => 'Paket Gamers',
+                'price' => 350000.00,
+                'speed' => '50 Mbps',
+            ],
+            [
+                'name' => 'Paket Keluarga',
+                'price' => 325000.00,
+                'speed' => '40 Mbps',
+            ],
+        ];
+
+        foreach ($packages as $package) {
+            Package::create($package);
+        }
     }
 }

@@ -5,9 +5,21 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
+import { LayoutGrid, Users } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
-const mainNavItems: NavItem[] = [];
+const mainNavItems: NavItem[] = [
+    {
+        title: 'Paket Internet',
+        href: route('packages.index'),
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Pelanggan',
+        href: route('clients.index'),
+        icon: Users,
+    },
+];
 
 const footerNavItems: NavItem[] = [];
 </script>
@@ -18,7 +30,7 @@ const footerNavItems: NavItem[] = [];
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton as-child size="lg">
-                        <Link :href="route('dashboard')">
+                        <Link :href="route('home')">
                             <AppLogo />
                         </Link>
                     </SidebarMenuButton>
