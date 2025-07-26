@@ -3,7 +3,7 @@
 
 echo "Performing final deployment steps..."
 
-APP_PATH="/var/www/example.domain"
+APP_PATH="/var/www/tugas03.routemedia.net.id"
 cd $APP_PATH
 
 # Make www-data own the entire Laravel application
@@ -20,7 +20,7 @@ sudo touch $APP_PATH/storage/logs/laravel.log
 sudo chown www-data:www-data $APP_PATH/storage/logs/laravel.log
 sudo chmod 664 $APP_PATH/storage/logs/laravel.log
 
-# Create storage symbolic link (this line is crucial for images to work)
+# Create storage symbolic link
 sudo -u www-data php artisan storage:link
 
 # Run all Laravel commands as www-data
